@@ -1,0 +1,19 @@
+// COLORS
+$darkGray: #555555;
+$mediumDarkGray: #707070;
+$lightGray: #C3C3C3;
+$creamWhite: #FFFEF7;
+$red:#FF7171;
+$blue:#6AA6FF;
+$black:#5D5D5D;
+$green:#68C074;
+
+
+// DESKTOP
+$width: 900px;
+
+@mixin desktop {
+    @media (min-width: #{$width}) {
+        @content
+    }
+}
