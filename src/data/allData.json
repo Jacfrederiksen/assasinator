@@ -1,0 +1,41 @@
+{
+    "white": [
+        {
+            "title":"white",
+            "bc" : "#FFFEF7",
+            "but" : "#555555"
+        }
+    ],
+
+    "blue": [
+        {
+            "title":"blue",
+            "bc" : "#BCCCCC",
+            "but" : "#555555"
+        }
+    ],
+
+    "black": [
+        {
+            "title":"black",
+            "bc" : "#5D5D5D",
+            "but" : "#C3C3C3"
+        }
+    ],
+
+    "red": [
+        {
+            "title":"red",
+            "bc" : "#FF7171",
+            "but" : "#555555"
+        }
+    ],
+    
+    "green": [
+        {
+            "title":"green",
+            "bc" : "#68C074",
+            "but" : "#555555"
+        }
+    ]
+}
