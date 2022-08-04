@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import styles from './playerscreen.module.scss';
 import data from './../../data/allData.json'
+import PassOverlay from '../../components/passOverlay/PassOverlay';
 
 const PlayerScreen = () => {
 
     let players = ["white", "blue", "black", "red", "green"];
     let choosenPlayers = [];
     const [counter, setCounter] = useState(0);
+    const [show, setShow] = useState(false);
     
     const chooseTarget = () => {
         setCounter(count => count + 1);
@@ -30,10 +32,11 @@ const PlayerScreen = () => {
                     </div>
                 </section>
                 <footer className={styles.player_foot}>
-                    <button style={{backgroundColor:data.white[0].but}}>hide</button>
+                    <button style={{backgroundColor:data.white[0].but}} onClick={() => setShow((s) => !s)}>hide</button>
                 </footer>
             </div>
         </div>
+        <PassOverlay show={show} closeModal={() => setShow(false)}/>
         </>
         
     )

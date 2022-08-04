@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import PlayerScreen from './pages/playerscreen/PlayerScreen';
 
 function App() {
+
   return (
     
     <div className='app_con'>
