@@ -1,41 +1,33 @@
-{
-    "white": [
+
+    [
         {
             "title":"white",
             "bc" : "#FFFEF7",
-            "but" : "#555555"
-        }
-    ],
-
-    "blue": [
+            "but" : "#555555",
+            "target" : ["blue", "black", "red", "green"]
+        },
         {
             "title":"blue",
             "bc" : "#BCCCCC",
-            "but" : "#555555"
-        }
-    ],
-
-    "black": [
+            "but" : "#555555",
+            "target" : ["white", "black", "red", "green"]
+        },
         {
             "title":"black",
             "bc" : "#5D5D5D",
-            "but" : "#C3C3C3"
-        }
-    ],
-
-    "red": [
+            "but" : "#C3C3C3",
+            "target" : ["blue", "white", "red", "green"]
+        },
         {
             "title":"red",
             "bc" : "#FF7171",
-            "but" : "#555555"
-        }
-    ],
-    
-    "green": [
+            "but" : "#555555",
+            "target" : ["blue", "black", "white", "green"]
+        },
         {
             "title":"green",
             "bc" : "#68C074",
-            "but" : "#555555"
+            "but" : "#555555",
+            "target" : ["blue", "black", "red", "white"]
         }
     ]
-}
