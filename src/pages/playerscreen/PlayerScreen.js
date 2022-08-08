@@ -7,12 +7,11 @@ const PlayerScreen = () => {
 
     let players = ["white", "blue", "black", "red", "green"];
     let choosenPlayers = [];
-    const [counter, setCounter] = useState(0);
+
     const [show, setShow] = useState(false);
     
     const chooseTarget = () => {
-        setCounter(count => count + 1);
-        console.log(counter)
+
     }
 
 
