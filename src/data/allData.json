@@ -14,8 +14,8 @@
         },
         {
             "title":"black",
-            "bc" : "#5D5D5D",
-            "but" : "#C3C3C3",
+            "bc" : "#454545",
+            "but" : "#777777",
             "target" : ["blue", "white", "red", "green"]
         },
         {
