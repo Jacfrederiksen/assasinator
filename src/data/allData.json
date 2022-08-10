@@ -4,30 +4,36 @@
             "title":"white",
             "bc" : "#FFFEF7",
             "but" : "#555555",
-            "target" : ["blue", "black", "red", "green"]
+            "asText" : "",
+            "targetText" : "",
+            "target" : ["green", "black", "red", "blue"]
         },
         {
             "title":"blue",
             "bc" : "#BCCCCC",
             "but" : "#555555",
-            "target" : ["white", "black", "red", "green"]
+            "asText" : "",
+            "target" : ["white", "red", "black", "green"]
         },
         {
             "title":"black",
             "bc" : "#454545",
             "but" : "#777777",
-            "target" : ["blue", "white", "red", "green"]
+            "asText" : "",
+            "target" : ["blue", "white", "green", "red"]
         },
         {
             "title":"red",
             "bc" : "#FF7171",
             "but" : "#555555",
-            "target" : ["blue", "black", "white", "green"]
+            "asText" : "",
+            "target" : ["black", "green", "white", "blue"]
         },
         {
             "title":"green",
             "bc" : "#68C074",
             "but" : "#555555",
-            "target" : ["blue", "black", "red", "white"]
+            "asText" : "",
+            "target" : ["red", "black", "blue", "white"]
         }
     ]
