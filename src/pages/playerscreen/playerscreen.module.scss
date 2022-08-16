@@ -3,9 +3,8 @@
 .player_wrapper{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: roboto;
+    @include flexCenter;
 
     .player_con{
         display: grid;
@@ -13,66 +12,86 @@
         grid-template-rows: 1fr 1fr 1fr;
         width: 100%;
         height: 100%;
-        background-color: rgb(255, 254, 251);
+
+        .player_bgImage_con{
+            grid-column: 1/-1;
+            grid-row: 1/-1;
+            z-index: 1;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
 
         .player_head{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $blackOverlay;
+            grid-column: 1/-1;
+            grid-row: 1/2;
+            @include flexCenter;
+            mix-blend-mode: screen;
+            z-index: 2;
 
             h1{
+                padding: 0px 30px;
+                font-size: 5rem;
+                text-align: center;
                 text-transform: uppercase;
-                font-size: 3rem;
+                color: black;
+                background-color: white;
             }
         }
 
         .player_sec{
-            display: flex;
+            grid-column: 1/-1;
+            grid-row: 2/3;
+            @include flexCenter;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            z-index: 2;
 
             button{
                 display: flex;
                 padding: 15px 50px;
-                background-color: $darkGray;
-                color: white;
-                border: none;
                 text-transform: uppercase;
-                font-family: roboto;
                 font-size: 1.3rem;
-                font-weight: 500;
+                font-weight: 600;
+                color: white;
+                border: 3.6px solid white;
                 border-radius: 50px;
                 cursor: pointer;
-        }
+            }
 
             .player_target_con{
                 display: none;
-                flex-direction: column;
-                justify-content: center;
                 width: 100%;
+                justify-content: center;
                 align-items: center;
+                flex-direction: column;
 
                 .a_span{
-                    text-transform: uppercase;
-                    font-size: 1.6rem;
-                    font-weight: 500;
-                    color: $black;
+                    @include flexCenter;
+                    width: 100%;
+                    height: 50px;
+                    background-color: white;
+                    margin-bottom: 5px;
+
+                    p{
+                        color: black;
+                        text-transform: uppercase;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                    }
                 }
 
                 .player_target{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: $black;
+                    @include flexCenter;
                     width: 100%;
-                    height: 50px;
+                    height: 75px;
+                    background-color: $black;
                     
                     p{
-                        color: rgb(204, 204, 204);
-                        font-size: 1.3rem;
                         text-transform: uppercase;
+                        font-size: 2rem;
                         font-weight: 700;
                     }
                 }
@@ -80,19 +99,20 @@
         }
 
         .player_foot{
+            grid-column: 1/-1;
+            grid-row: 3/-1;
             display: none;
             justify-content: center;
             align-items: center;
+            z-index: 2;
 
             button{
                 padding: 15px 80px;
-                background-color: $darkGray;
-                color: white;
-                border: none;
                 text-transform: uppercase;
-                font-family: roboto;
                 font-size: 1.3rem;
                 font-weight: 500;
+                color: white;
+                border: 3.6px solid white;
                 border-radius: 50px;
                 cursor: pointer;
             }

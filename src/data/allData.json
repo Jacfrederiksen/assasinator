@@ -3,37 +3,41 @@
         {
             "title":"white",
             "bc" : "#FFFEF7",
-            "but" : "#555555",
+            "but" : "rgba(226, 226, 226, 0.200",
             "asText" : "",
-            "targetText" : "",
+            "bgImage" : "./assets/white_bg_jacob.jpg",
             "target" : ["green", "black", "red", "blue"]
         },
         {
             "title":"blue",
             "bc" : "#BCCCCC",
-            "but" : "#555555",
+            "but" : "rgba(226, 226, 226, 0.200",
             "asText" : "",
+            "bgImage" : "./assets/blue_bg_jacob.jpg",
             "target" : ["white", "red", "black", "green"]
         },
         {
             "title":"black",
             "bc" : "#454545",
-            "but" : "#777777",
+            "but" : "rgba(226, 226, 226, 0.200",
             "asText" : "",
+            "bgImage" : "./assets/black_bg_jacob.jpg",
             "target" : ["blue", "white", "green", "red"]
         },
         {
             "title":"red",
             "bc" : "#FF7171",
-            "but" : "#555555",
+            "but" : "rgba(226, 226, 226, 0.200",
             "asText" : "",
+            "bgImage" : "./assets/red_bg_jacob.jpg",
             "target" : ["black", "green", "white", "blue"]
         },
         {
             "title":"green",
             "bc" : "#68C074",
-            "but" : "#555555",
+            "but" : "rgba(226, 226, 226, 0.200",
             "asText" : "",
+            "bgImage" : "./assets/green_bg_jacob.jpg",
             "target" : ["red", "black", "blue", "white"]
         }
     ]

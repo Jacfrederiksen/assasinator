@@ -9,7 +9,7 @@ const PlayerScreen = () => {
   let [count, setCount] = useState(0); //Counter til chooseTarget, bruges til at skifte data og styling til næste spiller
   let [opponents, setOpponents] = useState([]); //Array med de shufflede elementer fra targets i data
   const [selected, setSelected] = useState([]); //Array med de valgte targets fra det shufflede array
-  let navigate = useNavigate(); //Navigation til min count
+  let navigate = useNavigate();
 
   const hide = () => {
     if (count === 4) {
@@ -30,7 +30,7 @@ const PlayerScreen = () => {
 
     if (e.target.id == "ctTarget") {
       shuffle(data[count].target);
-      console.log('ggg')
+  
       e.target.style.display = "none";
       document.querySelector("#p_target_con").style.display = "flex";
       document.querySelector("#footer").style.display = "flex";
@@ -52,9 +52,16 @@ const PlayerScreen = () => {
         navigate("/", { replace: true });
         return;
     } 
+
     document.querySelector("#p_target_text").textContent = opponents[0];
     document.querySelector("#p_target_child").style.backgroundColor =
       opponents[0];
+
+    if (opponents[0] && document.querySelector("#p_target_text").textContent == "white") {
+      document.querySelector("#p_target_text").style.color = "black";
+    }  else {
+      document.querySelector("#p_target_text").style.color = "white";
+    }
 
     console.log("OPPONENTS " + opponents);
     console.log("SELECTED " + selected);
@@ -68,6 +75,9 @@ const PlayerScreen = () => {
           className={styles.player_con}
           style={{ backgroundColor: data[count].bc }}
         >
+          <div className={styles.player_bgImage_con}>
+            <img src={data[count].bgImage}></img>
+          </div>
           <header className={styles.player_head}>
             <h1>{data[count].title}</h1>
           </header>
@@ -80,7 +90,7 @@ const PlayerScreen = () => {
               show target
             </button>
             <div className={styles.player_target_con} id="p_target_con">
-              <span className={styles.a_span}>assasinate</span>
+              <span className={styles.a_span}><p>assasinate</p></span>
               <span className={styles.player_target} id="p_target_child">
                 <p id="p_target_text">{data[count].target}</p>
               </span>
@@ -93,7 +103,7 @@ const PlayerScreen = () => {
           </footer>
         </div>
       </div>
-      <PassOverlay
+        <PassOverlay
         show={show}
         closeModal={() =>
             setShow(false)}

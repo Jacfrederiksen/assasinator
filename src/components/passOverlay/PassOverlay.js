@@ -13,7 +13,6 @@ const PassOverlay = ({ show, counter, closeModal }) => {
         <header><h1>pass on</h1></header>
         <div className={styles.button_con}>
           <button id='pTarget' onClick={(e) => { counter(e); closeModal()}}>ready</button>
-          {/* <button id='pTarget' onClick={closeOverlay}>ready</button> */}
         </div>
       </div>
     </div>,

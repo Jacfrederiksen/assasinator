@@ -8,11 +8,25 @@ $blue:#6AA6FF;
 $black:#454545;
 $green:#4eca5f;
 $blackOverlay: rgba(0, 0, 0, 0.503);
+$whiteOverlay: rgba(226, 226, 226, 0.682);
 $allBlack:#1a1a1a;
 
 
 // DESKTOP
 $width: 900px;
+$widthTablet: 700px;
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin tablet {
+    @media (min-width: #{$widthTablet}) {
+        @content
+    }
+}
 
 @mixin desktop {
     @media (min-width: #{$width}) {
