@@ -4,13 +4,44 @@ import data from "./../../data/allData.json";
 import PassOverlay from "../../components/passOverlay/PassOverlay";
 import { useNavigate } from "react-router-dom";
 
+let targetNames = [
+  "white",
+  "blue",
+  "black",
+  "red",
+  "green"
+]
+
+
+const pregen = () => {
+  let pregennedData = {}
+  const randomTargetNames = targetNames.slice().sort(() => Math.random() - 0.5);
+
+  for (let i = 0; i < randomTargetNames.length; i++) {
+    let randomTarget = randomTargetNames[i];
+    let keyName = targetNames[i];
+    if (keyName === randomTarget) {
+      return pregen();
+    }
+    pregennedData[keyName] = randomTarget;
+  }
+
+  return pregennedData;
+}
+
+
 const PlayerScreen = () => {
   const [show, setShow] = useState(false); //Portal
   let [count, setCount] = useState(0); //Counter til chooseTarget, bruges til at skifte data og styling til næste spiller
-  let [opponents, setOpponents] = useState([]); //Array med de shufflede elementer fra targets i data
-  const [selected, setSelected] = useState([]); //Array med de valgte targets fra det shufflede array
+  const [targets, _] = useState(pregen());
   let navigate = useNavigate();
 
+
+  useEffect(() => {
+    /* console.log(targets); */
+  }, [targets])
+
+  
   const hide = () => {
     if (count === 4) {
         navigate("/", { replace: true });
@@ -20,16 +51,23 @@ const PlayerScreen = () => {
     document.querySelector('#ctTarget').style.display = "flex";
     document.querySelector("#p_target_con").style.display = "none";
     document.querySelector("#footer").style.display = "none";
-
   };
 
+
   const chooseTarget = (e) => {
-    let footer = document.querySelector("#footer");
     if (e.target.id == "pTarget") setCount((count) => count + 1);
-
-
     if (e.target.id == "ctTarget") {
-      shuffle(data[count].target);
+      /* console.log(targets[targetNames[count]]); */
+
+      document.querySelector("#p_target_text").textContent = targets[targetNames[count]]
+      document.querySelector("#p_target_child").style.backgroundColor =
+      targets[targetNames[count]]
+
+      if (targets[targetNames[count]] && document.querySelector("#p_target_text").textContent == "white") {
+        document.querySelector("#p_target_text").style.color = "black";
+      }  else {
+        document.querySelector("#p_target_text").style.color = "white";
+      }
   
       e.target.style.display = "none";
       document.querySelector("#p_target_con").style.display = "flex";
@@ -37,36 +75,6 @@ const PlayerScreen = () => {
     }
   };
 
-  const shuffle = () => {
-    console.log(count);
-    setOpponents(data[count].target.sort(() => Math.random() - 0.5));
-  };
-
-  useEffect(() => {
-    if (!opponents.length) return;
- 
-    setSelected((selected) => [...selected, opponents[0]]);
-
-    opponents = opponents.filter((remove) => !selected.includes(remove));
-    if (!opponents[0] && count === 4) {
-        navigate("/", { replace: true });
-        return;
-    } 
-
-    document.querySelector("#p_target_text").textContent = opponents[0];
-    document.querySelector("#p_target_child").style.backgroundColor =
-      opponents[0];
-
-    if (opponents[0] && document.querySelector("#p_target_text").textContent == "white") {
-      document.querySelector("#p_target_text").style.color = "black";
-    }  else {
-      document.querySelector("#p_target_text").style.color = "white";
-    }
-
-    console.log("OPPONENTS " + opponents);
-    console.log("SELECTED " + selected);
-    console.log("TARGET " + opponents[0]);
-  }, [opponents]);
 
   return (
     <>
@@ -92,7 +100,7 @@ const PlayerScreen = () => {
             <div className={styles.player_target_con} id="p_target_con">
               <span className={styles.a_span}><p>assasinate</p></span>
               <span className={styles.player_target} id="p_target_child">
-                <p id="p_target_text">{data[count].target}</p>
+                <p id="p_target_text">{targets[targetNames[count]]}</p>
               </span>
             </div>
           </section>

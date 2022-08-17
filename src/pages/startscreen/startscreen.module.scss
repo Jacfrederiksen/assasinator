@@ -52,6 +52,14 @@
                 @include tablet{
                     font-size: 5rem;
                 }
+
+                @include desktop{
+                    font-size: 4rem;
+                }
+
+                @include landscape{
+                    font-size: 2rem;
+                }
             }       
         }
 
@@ -63,6 +71,10 @@
             grid-template-rows: 1fr 2fr 2fr;
             z-index: 2;
             margin-top: 20px;
+
+            @include landscape {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            }
 
             .start_player_head{
                 grid-column: 2/3;
@@ -92,6 +104,16 @@
                     width: 100px;
                     height: 100px;
                 }
+
+                @include desktop{
+                    width: 80px;
+                    height: 80px;
+                }
+
+                @include landscape{
+                    width: 40px;
+                    height: 40px;
+                }
             }
 
             div{
@@ -102,26 +124,46 @@
                 grid-column: 2/3;
                 grid-row: 1/2;
                 transform: rotate(90deg);
+
+                @include landscape{
+                    grid-column: 3/4;
+                }
             }
             .blue_a{
                 grid-column: 3/-1;
                 grid-row: 2/3;
                 transform: rotate(160deg);
+
+                @include landscape{
+                    grid-column: 4/5;
+                }
             }
             .black_a{
                 grid-column: 3/-1;
                 grid-row: 3/-1;
                 transform: rotate(200deg);
+
+                @include landscape{
+                    grid-column: 4/5;
+                }
             }
             .red_a{
                 grid-column: 1/2;
                 grid-row: 3/-1;
                 transform: rotate(340deg);
+
+                @include landscape{
+                    grid-column: 2/3;
+                }
             }
             .green_a{
                 grid-column: 1/2;
                 grid-row: 2/3;
                 transform: rotate(20deg);
+
+                @include landscape{
+                    grid-column: 2/3;
+                }
             }
         }
 
@@ -130,6 +172,11 @@
             grid-row: 3/-1;
             @include flexCenter;
             z-index: 2;
+
+            @include landscape{
+                padding-bottom: 10px;
+            }
+            
 
             button{
                 padding: 12px 75px;
@@ -142,10 +189,21 @@
                 border: none;
                 background-color: rgb(18, 140, 18);
                 cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
                 @include tablet{
                     padding: 18px 95px;
                     font-size: 1.9rem;
+                }
+
+                @include desktop{
+                    padding: 12px 75px;
+                    font-size: 1.6rem;
+                }
+
+                @include landscape{
+                    padding: 5px 40px;
+                    font-size: 0.9rem;
                 }
         }
     }

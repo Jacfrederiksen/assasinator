@@ -1,20 +1,11 @@
 // COLORS
-$darkGray: #555555;
-$mediumDarkGray: #707070;
 $lightGray: #C3C3C3;
-$creamWhite: #FFFEF7;
-$red:#FF7171;
-$blue:#6AA6FF;
-$black:#454545;
-$green:#4eca5f;
-$blackOverlay: rgba(0, 0, 0, 0.503);
-$whiteOverlay: rgba(226, 226, 226, 0.682);
 $allBlack:#1a1a1a;
 
 
 // DESKTOP
 $width: 900px;
-$widthTablet: 700px;
+$widthTablet: 600px;
 
 @mixin flexCenter {
     display: flex;
@@ -30,6 +21,12 @@ $widthTablet: 700px;
 
 @mixin desktop {
     @media (min-width: #{$width}) {
+        @content
+    }
+}
+
+@mixin landscape {
+    @media screen and (min-width: 300px) and (max-width: 920px) and (orientation: landscape) {
         @content
     }
 }
